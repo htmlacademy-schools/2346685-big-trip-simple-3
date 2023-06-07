@@ -12,14 +12,15 @@
     "node": "18"
   },
   "dependencies": {
-    "dayjs": "1.11.3",
+    "dayjs": "1.11.6",
     "flatpickr": "4.6.13",
+    "fs-promise": "^2.0.3",
     "he": "1.2.0"
   },
   "devDependencies": {
     "@babel/core": "7.20.5",
     "@babel/preset-env": "7.20.2",
-    "babel-loader": "9.1.0",
+    "babel-loader": "8.0.4",
     "copy-webpack-plugin": "11.0.0",
     "css-loader": "6.7.2",
     "dayjs": "1.11.6",
@@ -28,8 +29,8 @@
     "flatpickr": "4.6.13",
     "he": "1.2.0",
     "style-loader": "3.3.1",
-    "webpack": "^5.80.0",
-    "webpack-cli": "4.10.0",
+    "webpack": "5.75.0",
+    "webpack-cli": "5.0.0",
     "webpack-dev-server": "4.11.1"
   },
   "browserslist": [
