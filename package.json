@@ -14,7 +14,7 @@
   "dependencies": {
     "dayjs": "1.11.6",
     "flatpickr": "4.6.13",
-    "fs-promise": "^2.0.3",
+    "fs-promise": "2.0.3",
     "he": "1.2.0"
   },
   "devDependencies": {
