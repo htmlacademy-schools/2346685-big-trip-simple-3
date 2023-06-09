@@ -16,14 +16,10 @@ const AUTHORIZATION = 'Basic kTy9gIdsz2317rD';
 const END_POINT = 'https://18.ecmascript.pages.academy/big-trip';
 const waypointsApiService = new PointApiService(END_POINT, AUTHORIZATION);
 
-console.log('Hello world!');
-
 const modelWaypoints = new ModelPoint({ waypointsApiService });
 const modelFilter = new FilterModel();
 const modelOffers = new ModelOffers({ waypointsApiService });
 const modelDestinations = new ModelDestinations({ waypointsApiService });
-
-console.log('Hello world!');
 
 const boardPresenter = new BoardPresenter({
   boardContainer: container,
