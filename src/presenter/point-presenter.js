@@ -1,9 +1,8 @@
 import { render, replace, remove } from '../framework/render';
 import PointView from '../view/point-view';
-import EditFormView from '../view/edit-form-view';
-import { isEscapeKey } from '../utils/utils';
-import { UserAction, UpdateType } from '../const';
-import { isDatesEqual } from '../utils/formatTime-Utils';
+import EditFormView from '../view/editing-form-view';
+import { isEscapeKey } from '../util';
+import { UserAction, UpdateType } from '../constants';
 
 const Mode = {
   DEFAULT: 'DEFAULT',
@@ -146,7 +145,7 @@ export default class PointPresenter {
   }
 
   #handleFormSubmit = (update) => {
-    const isMinorUpdate = !isDatesEqual(this.#point.dateFrom, update.dateFrom) || this.#point.basePrice !== update.basePrice;
+    const isMinorUpdate = (this.#point.dateFrom !== update.dateFrom) || (this.#point.basePrice !== update.basePrice);
     this.#handleDataChange(
       UserAction.UPDATE_TRIPPOINT,
       isMinorUpdate ? UpdateType.MINOR : UpdateType.PATCH,

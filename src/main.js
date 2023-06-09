@@ -1,25 +1,29 @@
 import BoardPresenter from './presenter/board-presenter';
-import ModelWaypoint from './model/point-model';
-import ModelFilters from './model/filter-model';
+import ModelPoint from './model/point-model';
+import FilterModel from './model/filter-model';
 import ModelOffers from './model/offers-model';
 import ModelDestinations from './model/destinations-model';
 import FilterPresenter from './presenter/filter-presenter';
-import {render} from './render';
-import NewWaypointButton from './view/new-waypoint-button';
-import WaypointsApiService from './api/point-api-service';
+import { render } from './render';
+import AddPointButton from './view/add_point-button';
+import PointApiService from './api/point-api-service';
 
 const siteHeaderElement = document.querySelector('.trip-controls__filters');
 const container = document.querySelector('.trip-events');
 const placeForButton = document.querySelector('.trip-main');
 
-const AUTHORIZATION = 'Basic sgkdajgskdas7757';
+const AUTHORIZATION = 'Basic kTy9gIdsz2317rD';
 const END_POINT = 'https://18.ecmascript.pages.academy/big-trip';
-const waypointsApiService = new WaypointsApiService(END_POINT, AUTHORIZATION);
+const waypointsApiService = new PointApiService(END_POINT, AUTHORIZATION);
 
-const modelWaypoints = new ModelWaypoint({waypointsApiService});
-const modelFilter = new ModelFilters();
-const modelOffers = new ModelOffers({waypointsApiService});
-const modelDestinations = new ModelDestinations({waypointsApiService});
+console.log('Hello world!');
+
+const modelWaypoints = new ModelPoint({ waypointsApiService });
+const modelFilter = new FilterModel();
+const modelOffers = new ModelOffers({ waypointsApiService });
+const modelDestinations = new ModelDestinations({ waypointsApiService });
+
+console.log('Hello world!');
 
 const boardPresenter = new BoardPresenter({
   boardContainer: container,
@@ -36,7 +40,7 @@ const filterPresenter = new FilterPresenter({
   modelWaypoints
 });
 
-const newWaypointButtonComponent = new NewWaypointButton({
+const newWaypointButtonComponent = new AddPointButton({
   onClick: handleNewTaskButtonClick
 });
 
