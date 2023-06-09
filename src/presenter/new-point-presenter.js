@@ -1,9 +1,9 @@
 import {render, RenderPosition} from '../render';
-import {UpdateType, UserAction} from '../const';
+import {UpdateType, UserAction} from '../constants';
 
-import EditForm from '../view/edit-form';
+import EditForm from '../view/editing-form-view';
 import {remove} from '../framework/render';
-import {isEsc} from '../utils';
+import { isEscapeKey } from '../util';
 
 
 export default class NewPointPresenter {
@@ -71,7 +71,7 @@ export default class NewPointPresenter {
 
 
   #ecsKeyDownHandler = (evt) => {
-    if (isEsc(evt)) {
+    if (isEscapeKey(evt)) {
       evt.preventDefault();
       this.destroy();
     }

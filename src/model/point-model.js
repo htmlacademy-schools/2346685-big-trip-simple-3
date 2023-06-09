@@ -1,5 +1,5 @@
 import Observable from '../framework/observable';
-import {UpdateType} from '../const';
+import {UpdateType} from '../constants';
 
 export default class ModelPoint extends Observable {
   #pointsApiService = null;
