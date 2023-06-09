@@ -9,11 +9,6 @@ const BASIC_DATE_FORMAT = 'DD/MM/YY HH:mm';
 export const getRadomNumber = (start, end) =>
   Math.round(Math.random() * (end - start) + start);
 
-export const getRandomArrayElement = (items) => items[Math.floor(Math.random() * items.length)];
-export const getRandomPrice = () => Math.floor(Math.random() * 1000) + 100;
-export const getRandomId = () => Math.floor(Math.random() * 100) + 1;
-export const getRandomPicture = () => `http://picsum.photos/248/152?r=${getRandomId()}`;
-
 export const convertToEventDateTime = (date) => date.substring(0, date.indexOf('T'));
 export const convertToEventDate = (date) => dayjs(date).format(EVENT_DATE_FORMAT);
 export const convertToDateTime = (date) => date.substring(0, date.indexOf('.'));
